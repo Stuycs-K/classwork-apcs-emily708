@@ -45,6 +45,7 @@ public class ArrayMethods {
     return new int[1][1];
   }
   public static void main (String args[]){
-
+    int[][] ary1 = new int[]{{1,2,3},{4,5,6},{7,8,9}};
+    System.out.println("Expected: [[1,2,3],[4,5,6],[7,8,9]] vs my function: " + arrToString(ary1));
   }
 }
