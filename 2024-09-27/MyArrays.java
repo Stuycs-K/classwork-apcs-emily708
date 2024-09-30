@@ -17,6 +17,18 @@ public class MyArrays {
     }
     return copy;
   }
+  
+  public static int[] concatArray(int[] ary1, int[] ary2) {
+    int[] newAry = new int[ary1.length + ary2.length];
+    for (int i = 0; i < ary1.length; i++) {
+      newAry[i] = ary1[i];
+    }
+    for (int i = 0; i < ary2.length; i++) {
+      newAry[i + ary1.length] = ary2[i];
+    }
+    return newAry;
+  }
+
   public static void main(String args[]) {
     //test cases for returnCopy
     int[] ary1 = new int[]{1,5,8};
@@ -35,15 +47,15 @@ public class MyArrays {
     //test cases for concatArray
     int[] ary3 = new int[]{1,2,3};
     int[] ary4 = new int[]{4,5,6};
-    System.out.println("Expected: [1,2,3,4,5,6] vs my function: " + arrayToString(concatArray(ary3, ary4)));
+    System.out.println("Expected: [1, 2, 3, 4, 5, 6] vs my function: " + arrayToString(concatArray(ary3, ary4)));
     ary3 = new int[]{3,7,1,5};
     ary4 = new int[]{0,4,9};
-    System.out.println("Expected: [3,7,1,5,0,4,9] vs my function: " + arrayToString(concatArray(ary3, ary4)));
+    System.out.println("Expected: [3, 7, 1, 5, 0, 4, 9] vs my function: " + arrayToString(concatArray(ary3, ary4)));
     ary3 = new int[]{8,2,5};
     ary4 = new int[]{5,7,1,1};
-    System.out.println("Expected: [8,2,5,5,7,1,1] vs my function: " + arrayToString(concatArray(ary3, ary4)));
+    System.out.println("Expected: [8, 2, 5, 5, 7, 1, 1] vs my function: " + arrayToString(concatArray(ary3, ary4)));
     ary3 = new int[]{1,9,3,2,3};
     ary4 = new int[]{5,0};
-    System.out.println("Expected: [1,9,3,2,3,5,0] vs my function: " + arrayToString(concatArray(ary3, ary4)));
+    System.out.println("Expected: [1, 9, 3, 2, 3, 5, 0] vs my function: " + arrayToString(concatArray(ary3, ary4)));
   }
 }
