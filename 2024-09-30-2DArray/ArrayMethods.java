@@ -8,7 +8,7 @@ public class ArrayMethods {
   * "[2, 3, 4, 9]"
   * Note the comma+space between values, and between values
   */
-  public static String arrToString(int[] ary) {
+  public static String arrToString(int[]ary) {
     String x = "[";
     for (int i = 0; i < ary.length; i++) {
       x += ary[i];
@@ -27,7 +27,7 @@ public class ArrayMethods {
     * You are encouraged to notice that you may want to re-use
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
-  public static String arrToString(int[][] ary){
+  public static String arrToString(int[][]ary){
     String x = "[";
     for (int i = 0; i < ary.length; i++) {
       x += arrToString(ary[i]);
@@ -40,7 +40,13 @@ public class ArrayMethods {
 
   /*Return the sum of all of the values in the 2D array */
   public static int arr2DSum(int[][]nums){
-    //use a nested loop to solve this
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        sum += nums[i][j];
+      }
+    }
+    return sum;
   }
 
   /**Rotate an array by returning a new array with the rows and columns swapped.
