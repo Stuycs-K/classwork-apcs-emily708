@@ -1,7 +1,7 @@
-public class ArrayMethods {
+// Emily Mai emilym384@nycstudents.net
+// Joy Lu joyl28@nycstudents.net
 
-  // Emily Mai emilym384@nycstudents.net
-  // Joy Lu joyl28@nycstudents.net
+public class ArrayMethods {
 
   //2. Copy your arrToString method from before.
   /**Return a String that represets the array in the format:
@@ -76,5 +76,15 @@ public class ArrayMethods {
     System.out.println("Expected: 53 vs my function: " + arr2DSum(ary2));
     ary2 = new int[][] {{9, 1, 5}, {20, 80}, {}};
     System.out.println("Expected: 115 vs my function: " + arr2DSum(ary2));
+
+    //test cases for swapRC
+    int[][] ary3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] vs my function: " + swapRC(ary3));
+    ary3 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + swapRC(ary3));
+    ary3 = new int[][] {{5, 2}, {6, 0}, {1, 3}};
+    System.out.println("Expected: [[5, 6, 1], [2, 0, 3]] vs my function: " + swapRC(ary3));
+    ary3 = new int[][] {{42}, {7}, {91}};
+    System.out.println("Expected: [[42, 7, 91]] vs my function: " + swapRC(ary3));
   }
 }
