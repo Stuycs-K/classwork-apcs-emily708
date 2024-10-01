@@ -45,7 +45,14 @@ public class ArrayMethods {
     return new int[1][1];
   }
   public static void main (String args[]){
+    //test cases for arrToString
     int[][] ary1 = new int[]{{1,2,3},{4,5,6},{7,8,9}};
-    System.out.println("Expected: [[1,2,3],[4,5,6],[7,8,9]] vs my function: " + arrToString(ary1));
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
+    int[][] ary1 = new int[]{{6,3,8,9},{1,5,6},{4,7,6,0,1}};
+    System.out.println("Expected: [[6, 3, 8, 9], [1, 5, 6], [4, 7, 6, 0, 1]] vs my function: " + arrToString(ary1));
+    int[][] ary1 = new int[]{{12,92,3},{0},{2}};
+    System.out.println("Expected: [[12, 92, 3], [0], [2]] vs my function: " + arrToString(ary1));
+    int[][] ary1 = new int[]{{8,3},{},{1,5,6}};
+    System.out.println("Expected: [[8, 3], [], [1, 5, 6]] vs my function: " + arrToString(ary1));
   }
 }
