@@ -60,5 +60,15 @@ public class ArrayMethods {
     System.out.println("Expected: [[12, 92, 3], [0], [2]] vs my function: " + arrToString(ary1));
     ary1 = new int[][] {{8, 3}, {}, {1, 5, 6}};
     System.out.println("Expected: [[8, 3], [], [1, 5, 6]] vs my function: " + arrToString(ary1));
+
+    //test cases for arr2DSum
+    int[][] ary2 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: 45 vs my function: " + arr2DSum(ary2));
+    ary2 = new int[][] {{5, 3}, {10, 4}, {9, 0, 1}};
+    System.out.println("Expected: 32 vs my function: " + arr2DSum(ary2));
+    ary2 = new int[][] {{23, 10, 7}, {1}, {7, 5}};
+    System.out.println("Expected: 53 vs my function: " + arr2DSum(ary2));
+    ary2 = new int[][] {{9, 1, 5}, {20, 80}, {}};
+    System.out.println("Expected: 115 vs my function: " + arr2DSum(ary2));
   }
 }
