@@ -8,11 +8,11 @@ public class ArrayMethods {
   * "[2, 3, 4, 9]"
   * Note the comma+space between values, and between values
   */
-  public static String arrToString(int[] nums) {
+  public static String arrToString(int[] ary) {
     String x = "[";
-    for (int i = 0; i < nums.length; i++) {
-      x += nums[i];
-      if (i < nums.length - 1) {
+    for (int i = 0; i < ary.length; i++) {
+      x += ary[i];
+      if (i < ary.length - 1) {
         x += ", ";
       }
     }
@@ -27,9 +27,15 @@ public class ArrayMethods {
     * You are encouraged to notice that you may want to re-use
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
-  public static String arrToString(int[][]ary){
-    //this should use arrToString(int[])
-    return "";
+  public static String arrToString(int[][] ary){
+    String x = "[";
+    for (int i = 0; i < ary.length; i++) {
+      x += arrToString(ary[i]);
+      if (i < ary.length - 1) {
+        x += ", ";
+      }
+    }
+    return x + "]";
   }
 
   /*Return the sum of all of the values in the 2D array */
@@ -46,13 +52,13 @@ public class ArrayMethods {
   }
   public static void main (String args[]){
     //test cases for arrToString
-    int[][] ary1 = new int[]{{1,2,3},{4,5,6},{7,8,9}};
+    int[][] ary1 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
-    int[][] ary1 = new int[]{{6,3,8,9},{1,5,6},{4,7,6,0,1}};
+    ary1 = new int[][] {{6, 3, 8, 9}, {1, 5, 6}, {4, 7, 6, 0, 1}};
     System.out.println("Expected: [[6, 3, 8, 9], [1, 5, 6], [4, 7, 6, 0, 1]] vs my function: " + arrToString(ary1));
-    int[][] ary1 = new int[]{{12,92,3},{0},{2}};
+    ary1 = new int[][] {{12, 92, 3}, {0}, {2}};
     System.out.println("Expected: [[12, 92, 3], [0], [2]] vs my function: " + arrToString(ary1));
-    int[][] ary1 = new int[]{{8,3},{},{1,5,6}};
+    ary1 = new int[][] {{8, 3}, {}, {1, 5, 6}};
     System.out.println("Expected: [[8, 3], [], [1, 5, 6]] vs my function: " + arrToString(ary1));
   }
 }
