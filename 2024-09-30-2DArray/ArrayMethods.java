@@ -54,7 +54,13 @@ public class ArrayMethods {
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] swappedAry = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[0].length; j++) {
+        swappedAry[j][i] = nums[i][j];
+      }
+    }
+    return swappedAry;
   }
   public static void main (String args[]){
     //test cases for arrToString
@@ -79,12 +85,12 @@ public class ArrayMethods {
 
     //test cases for swapRC
     int[][] ary3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
-    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] vs my function: " + swapRC(ary3));
+    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] vs my function: " + arrToString(swapRC(ary3)));
     ary3 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + swapRC(ary3));
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + arrToString(swapRC(ary3)));
     ary3 = new int[][] {{5, 2}, {6, 0}, {1, 3}};
-    System.out.println("Expected: [[5, 6, 1], [2, 0, 3]] vs my function: " + swapRC(ary3));
+    System.out.println("Expected: [[5, 6, 1], [2, 0, 3]] vs my function: " + arrToString(swapRC(ary3)));
     ary3 = new int[][] {{42}, {7}, {91}};
-    System.out.println("Expected: [[42, 7, 91]] vs my function: " + swapRC(ary3));
+    System.out.println("Expected: [[42, 7, 91]] vs my function: " + arrToString(swapRC(ary3)));
   }
 }
