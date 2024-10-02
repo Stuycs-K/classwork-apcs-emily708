@@ -122,5 +122,22 @@ public class ArrayMethods {
     System.out.println("Expected: [[5, 6, 1], [2, 0, 3]] vs my function: " + arrToString(swapRC(ary3)));
     ary3 = new int[][] {{42}, {7}, {91}};
     System.out.println("Expected: [[42, 7, 91]] vs my function: " + arrToString(swapRC(ary3)));
+
+    //test cases for replaceNegative
+    int[][] ary4 = new int[][] {{-1, 2, -3}, {4, -5, 6}, {7, -8, -9}};
+    replaceNegative(ary4);
+    System.out.println("Expected: [[1, 2, 0], [4, 1, 6], [7, 0, 1]] vs my function: " + arrToString(ary4));
+    ary4 = new int[][] {{0, 5, -4}, {-2, -7}, {4, -3, -5, -4}};
+    replaceNegative(ary4);
+    System.out.println("Expected: [[0, 5, 0], [0, 1], [4, 0, 1, 0]] vs my function: " + arrToString(ary4));
+    ary4 = new int[][] {{6, -5, 2}, {}, {-9}};
+    replaceNegative(ary4);
+    System.out.println("Expected: [[6, 0, 2], [], [0]] vs my function: " + arrToString(ary4));
+    ary4 = new int[][] {{-6, -2}, {-5, -10, -15}, {4, 2}, {1, 0, -3, -8}};
+    replaceNegative(ary4);
+    System.out.println("Expected: [[1, 0], [0, 1, 0], [4, 2], [1, 0, 0, 1]] vs my function: " + arrToString(ary4));
+    ary4 = new int[][] {{}, {-7, -3, 6}, {}, {-1, 3, -2, -5}};
+    replaceNegative(ary4);
+    System.out.println("Expected: [[], [0, 1, 6], [], [0, 3, 0, 1]] vs my function: " + arrToString(ary4));
   }
 }
