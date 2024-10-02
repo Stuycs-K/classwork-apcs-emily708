@@ -139,5 +139,22 @@ public class ArrayMethods {
     ary4 = new int[][] {{}, {-7, -3, 6}, {}, {-1, 3, -2, -5}};
     replaceNegative(ary4);
     System.out.println("Expected: [[], [0, 1, 6], [], [0, 3, 0, 1]] vs my function: " + arrToString(ary4));
+
+    //test cases for copy
+    int[][] ary5 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int[][] ary5a = copy(ary5);
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary5a) + ". Expected addresses to be different: true vs my function: " + (ary5 != ary5a) + ". Expected elements to be the same: true vs my function: " + arrToString(ary5).equals(arrToString(ary5a)));
+    ary5 = new int[][] {{5, 10}, {4, 7, 1}};
+    ary5a = copy(ary5);
+    System.out.println("Expected: [[5, 10], [4, 7, 1]] vs my function: " + arrToString(ary5a) + ". Expected addresses to be different: true vs my function: " + (ary5 != ary5a) + ". Expected elements to be the same: true vs my function: " + arrToString(ary5).equals(arrToString(ary5a)));
+    ary5 = new int[][] {{2, 5}, {}, {1}, {6, 1, 7}, {}};
+    ary5a = copy(ary5);
+    System.out.println("Expected: [[2, 5], [], [1], [6, 1, 7], []] vs my function: " + arrToString(ary5a) + ". Expected addresses to be different: true vs my function: " + (ary5 != ary5a) + ". Expected elements to be the same: true vs my function: " + arrToString(ary5).equals(arrToString(ary5a)));
+    ary5 = new int[][] {{6, 4, 0}};
+    ary5a = copy(ary5);
+    System.out.println("Expected: [[6, 4, 0]] vs my function: " + arrToString(ary5a) + ". Expected addresses to be different: true vs my function: " + (ary5 != ary5a) + ". Expected elements to be the same: true vs my function: " + arrToString(ary5).equals(arrToString(ary5a)));
+    ary5 = new int[][] {{1, 8, 10}, {15}, {5, 20}, {}};
+    ary5a = copy(ary5);
+    System.out.println("Expected: [[1, 8, 10], [15], [5, 20], []] vs my function: " + arrToString(ary5a) + ". Expected addresses to be different: true vs my function: " + (ary5 != ary5a) + ". Expected elements to be the same: true vs my function: " + arrToString(ary5).equals(arrToString(ary5a)));
   }
 }
