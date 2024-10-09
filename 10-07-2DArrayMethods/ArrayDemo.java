@@ -33,6 +33,34 @@ public class ArrayDemo{
     System.out.println("Expected: 2 vs my function: " + countZeros2D(ary3));
     ary3 = new int[][]{{23, 1, 0, 0}, {10, 0, 5, 4}, {1, 5, 3, 9}, {0, 1}};
     System.out.println("Expected: 4 vs my function: " + countZeros2D(ary3));
+
+    //test cases for arr2DSum
+    int[][] ary4 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: 45 vs my function: " + arr2DSum(ary4));
+    ary4 = new int[][] {{4, 3}, {8, 4}, {9, 0, 2}};
+    System.out.println("Expected: 30 vs my function: " + arr2DSum(ary4));
+
+    //test cases for replaceNegative
+    int[][] ary5 = new int[][] {{-1, 2, -3}, {4, -5, 6}, {7, -8, -9}};
+    replaceNegative(ary5);
+    System.out.println("Expected: [[1, 2, 0], [4, 1, 6], [7, 0, 1]] vs my function: " + Arrays.deepToString(ary5));
+    ary5 = new int[][] {{0, 6, -3}, {-5, -7}, {-3, 4, -5, -4}};
+    replaceNegative(ary5);
+    System.out.println("Expected: [[0, 6, 0], [0, 1], [0, 4, 1, 0]] vs my function: " + Arrays.deepToString(ary5));
+
+    //test cases for copy
+    int[][] ary6 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int[][] ary6a = copy(ary6);
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + Arrays.deepToString(ary6a) + ". Expected addresses to be different: true vs my function: " + (ary6 != ary6a) + ". Expected elements to be the same: true vs my function: " + Arrays.deepToString(ary6).equals(Arrays.deepToString(ary6a)));
+    ary6 = new int[][] {{8, 10}, {2, 7, 1, 0}};
+    ary6a = copy(ary6);
+    System.out.println("Expected: [[8, 10], [2, 7, 1, 0]] vs my function: " + Arrays.deepToString(ary6a) + ". Expected addresses to be different: true vs my function: " + (ary6 != ary6a) + ". Expected elements to be the same: true vs my function: " + Arrays.deepToString(ary6).equals(Arrays.deepToString(ary6a)));
+    
+    //test cases for swapRC
+    int[][] ary7 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] vs my function: " + Arrays.deepToString(swapRC(ary7)));
+    ary7 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + Arrays.deepToString(swapRC(ary7)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
