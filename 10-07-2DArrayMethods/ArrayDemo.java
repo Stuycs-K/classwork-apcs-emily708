@@ -7,7 +7,20 @@ public class ArrayDemo{
     //do not use any other Arrays.method()
 
     //test cases for arrToString(int[]ary)
-    int[] ary1 = new int
+    int[] ary1 = new int[]{1, 2, 3};
+    System.out.println("Expected: " + Arrays.toString(ary1) + " vs my function: " + arrToString(ary1));
+    ary1 = new int[]{0, 8, 15, 2};
+    System.out.println("Expected: " + Arrays.toString(ary1) + " vs my function: " + arrToString(ary1));
+    ary1 = new int[]{};
+    System.out.println("Expected: " + Arrays.toString(ary1) + " vs my function: " + arrToString(ary1));
+    
+    //test cases for arrToString
+    int[][] ary2 = new int[][]{{1, 2}, {3, 4}, {5, 6}};
+    System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
+    ary2 = new int[][]{{9, 0 , 3}, {}, {7, 5}};
+    System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
+    ary2 = new int[][]{{5, 17, 2}};
+    System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
