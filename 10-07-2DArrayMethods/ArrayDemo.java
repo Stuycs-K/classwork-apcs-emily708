@@ -21,6 +21,18 @@ public class ArrayDemo{
     System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
     ary2 = new int[][]{{5, 17, 2}};
     System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
+
+    //test cases for countZeros2D
+    int[][] ary3 = new int[][]{{1, 2, 0}, {10, 5}, {}};
+    System.out.println("Expected: 1 vs my function: " + countZeros2D(ary3));
+    ary3 = new int[][]{{5, 1}, {3, 4, 9}, {1, 7}};
+    System.out.println("Expected: 0 vs my function: " + countZeros2D(ary3));
+    ary3 = new int[][]{{9, 0, 5}, {3, 0, 0, 20}, {}};
+    System.out.println("Expected: 3 vs my function: " + countZeros2D(ary3));
+    ary3 = new int[][]{{0, 4}, {0}, {8, 6, 5}};
+    System.out.println("Expected: 2 vs my function: " + countZeros2D(ary3));
+    ary3 = new int[][]{{23, 1, 0, 0}, {10, 0, 5, 4}, {1, 5, 3, 9}, {0, 1}};
+    System.out.println("Expected: 4 vs my function: " + countZeros2D(ary3));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
