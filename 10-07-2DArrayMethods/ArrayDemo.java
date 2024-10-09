@@ -14,7 +14,7 @@ public class ArrayDemo{
     ary1 = new int[]{};
     System.out.println("Expected: " + Arrays.toString(ary1) + " vs my function: " + arrToString(ary1));
     
-    //test cases for arrToString
+    //test cases for arrToString(int[][]ary)
     int[][] ary2 = new int[][]{{1, 2}, {3, 4}, {5, 6}};
     System.out.println("Expected: " + Arrays.deepToString(ary2) + " vs my function: " + arrToString(ary2));
     ary2 = new int[][]{{9, 0 , 3}, {}, {7, 5}};
@@ -61,6 +61,18 @@ public class ArrayDemo{
     System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] vs my function: " + Arrays.deepToString(swapRC(ary7)));
     ary7 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + Arrays.deepToString(swapRC(ary7)));
+
+    //test cases for htmlTable
+    int[][] ary8 = new int[][] {{1, 2}, {3}};
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table> vs my function: " + htmlTable(ary8));
+    ary8 = new int[][] {{0, 5, 8}, {6}, {1, 7}};
+    System.out.println("Expected: <table><tr><td>0</td><td>5</td><td>8</td></tr><tr><td>6</td></tr><tr><td>1</td><td>7</td></tr></table> vs my function: " + htmlTable(ary8));
+    ary8 = new int[][] {{}, {}};
+    System.out.println("Expected: <table><tr><td></td></tr><tr><td></td></tr></table> vs my function: " + htmlTable(ary8));
+    ary8 = new int[][] {{0}, {9, 20, 5}, {}};
+    System.out.println("Expected: <table><tr><td>0</td></tr><tr><td>9</td><td>20</td><td>5</td></tr><tr><td></td></tr></table> vs my function: " + htmlTable(ary8));
+    ary8 = new int[][] {{7, 4}, {3}, {8, 0, 2}, {}, {1}};
+    System.out.println("Expected: <table><tr><td>7</td><td>4</td></tr><tr><td>3</td></tr><tr><td>8</td><td>0</td><td>2</td></tr><tr><td></td></tr><tr><td>1</td></tr></table> vs my function: " + htmlTable(ary8));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
