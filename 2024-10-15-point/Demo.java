@@ -16,5 +16,8 @@ public class Demo{
     System.out.println( distance(p1,p2));
     System.out.println( Point.distance(p1,p2));
     System.out.println( p1.distanceTo(p2));
+
+    //test cases for Point(Point other)
+    System.out.println()
   }
 }
