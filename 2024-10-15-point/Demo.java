@@ -32,5 +32,12 @@ public class Demo{
     Point p4a = new Point(p4);
     System.out.println(p4a);
 
+    //equilateral triangle side length test cases
+    Point t1 = new Point(0, 0);
+    Point t2 = new Point(1, 0);
+    Point t3 = new Point(0.5, Math.sqrt(3)/2);
+    System.out.println(distance(t1, t2));
+    System.out.println(distance(t1, t3));
+    System.out.println(distance(t2, t3));
   }
 }
