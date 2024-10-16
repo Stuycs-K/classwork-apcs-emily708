@@ -14,9 +14,9 @@ public class Point{
   }
 
   //Initialize this Point to have the provided values
-  public Point(double x, double Y){
+  public Point(double x, double y){
     this.x=x;
-    this.y=Y;
+    this.y=y;
   }
   public double getX(){
     return x;
