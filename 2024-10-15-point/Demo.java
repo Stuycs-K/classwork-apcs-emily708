@@ -18,6 +18,11 @@ public class Demo{
     System.out.println( p1.distanceTo(p2));
 
     //test cases for Point(Point other)
-    System.out.println()
+    Point p3a = new Point(p3);
+    System.out.println(p3a);
+    Point p4 = new Point(2, 5);
+    Point p4a = new Point(p4);
+    System.out.println(p4a);
+
   }
 }
