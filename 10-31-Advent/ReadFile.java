@@ -4,22 +4,32 @@ import java.util.Scanner;
 
 public class ReadFile {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {    
     //2 Opening a file requires a try/catch
     try {
       File file = new File("ReadFile.java");//1
       Scanner input = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       //prints every other line
+      /*
       int count = 0;
       while (input.hasNextLine()) {
         if (count % 2 == 0) {
           System.out.println(input.nextLine());
         }
         else {
-            input.nextLine();
+          input.nextLine();
         }
         count++;
+      }
+      */
+      
+      //prints a line if it contains "{"
+      while (input.hasNextLine()) {
+        String nextLine = input.nextLine();
+        if (nextLine.contains("{")) {
+          System.out.println(nextLine);
+        }
       }
       input.close();//releases the file from your program
 
