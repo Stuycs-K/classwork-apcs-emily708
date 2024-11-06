@@ -28,4 +28,8 @@ public class TriangleTester {
   public static boolean isTriangle(int sideA, int sideB, int sideC) {
     return (sideA + sideB) > sideC && (sideA + sideC) > sideB && (sideB + sideC) > sideA;
   }
+
+  public static void main(String[] args) {
+    System.out.println("Number of valid triangles in inputTri.txt is: " + countTrianglesA("inputTri.txt"));
+  }
 }
