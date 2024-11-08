@@ -1,5 +1,9 @@
-//Previously when we called the speak method for the Bird class, Driver called the getName() of the Animal class.
-//When we overrode the getName() method, Driver called the new getName() method.
+/* Step 8:
+Previously when we called the speak method for the Bird class, Driver called the getName() of the Animal class.
+When we overrode the getName() method, Driver called the new getName() method.
+Step 10:
+The possibility of Bird b2 = new Animal(...); does not work because it means that Animal is-a Bird, or Animal is a subclass of Bird.
+However, Animal is not a subclass of Bird, so it does not work. */
 
 public class Driver{
   public static void main(String[] args){
