@@ -13,8 +13,11 @@ public class Driver{
     blueBird.speak();
 
     Animal a1 = new Animal("woof", 3, "dog");
+    a1.speak();
     Bird b1 = new Bird("tweet", 1, "birdy", 2.5, "white");
+    b1.speak();
     //Bird b2 = new Animal("meow", 7, "cat");
-    Animal a2 = new Bird("chirp", 10, "chip", 10.8, "green"); 
+    Animal a2 = new Bird("chirp", 10, "chip", 10.8, "green");
+    a2.speak();
   }
 }
