@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
+
 public class Day1 {
   public static String[] parse(String file) {
     try {
@@ -9,6 +10,7 @@ public class Day1 {
       String line = input.nextLine();
       String[] data = line.split(", ");
       //System.out.println(Arrays.toString(data));
+      input.close();
       return data;
     } catch (FileNotFoundException e) {
       System.out.println("File not found");
@@ -21,52 +23,31 @@ public class Day1 {
     int verticalBlocks = 0;
     int degrees = 0;
     for (int i = 0; i < data.length; i++) {
-      
-    }
-  }
-  public static int countBlocks(String filename) {
-    try {
-      File file = new File(filename);
-      Scanner input = new Scanner(file);
-      int horizontalBlocks = 0;
-      int verticalBlocks = 0;
-      int degrees = 0;
-      while (input.hasNext()) {
-        String nextMove = input.next();
-        String direction = nextMove.substring(0,1);
-        int blocks = Integer.parseInt(nextMove.substring(1));
-        if (direction.equals("L")) {
-          degrees += 90;
-        }
-        if (direction.equals("R")) {
-          degrees -= 90;
-        }
-        if (Math.abs(degrees) > 360) {
-          degrees /= 360;
-        }
-        if ((degrees / 90) == 1) {
-          verticalBlocks += blocks;
-        }
-        if ((degrees / 90) == 3) {
-          verticalBlocks -= blocks;
-        }
-        if ((degrees / 90) == 2) {
-          horizontalBlocks -= blocks;
-        }
-        if ((degrees / 90) == 0) {
-          horizontalBlocks += blocks;
-        }
-        System.out.println(Math.abs(horizontalBlocks) + Math.abs(verticalBlocks));
+      int blocks = Integer.parseInt(data[i].substring(1));
+      if (data[i].charAt(0) == 'L') {
+        degrees -= 1;
       }
-      input.close();
-      return Math.abs(horizontalBlocks) + Math.abs(verticalBlocks);
-    } catch (FileNotFoundException e) {
-      System.out.println("File not found");
-      return 0;
+      if (data[i].charAt(0) == 'R') {
+        degrees += 1;
+      }
+      if (degrees % 4 == 0) {
+        verticalBlocks += blocks;
+      }
+      if (degrees % 4 == 1) {
+        horizontalBlocks += blocks;
+      }
+      if (degrees % 4 == 2) {
+        verticalBlocks -= blocks;
+      }
+      if (degrees % 4 == 3) {
+        horizontalBlocks -= blocks;
+      }
     }
+    return Math.abs(horizontalBlocks) + Math.abs(verticalBlocks);
   }
-
-    public static void main(String[] args) {
-      System.out.println(parse("Day1.txt"));
+   
+  public static void main(String[] args) {
+    String[] data = parse("Day1.txt");
+    System.out.println(solve(data));
   }
 }
