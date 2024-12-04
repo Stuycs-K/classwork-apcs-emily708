@@ -1,5 +1,21 @@
 public class ColorDemo {
+
+  public static void rainbowCloud() {
+    int[] colors = new int[] {30, 31, 32, 33, 34, 35, 36, 37, 38};
+    for (int i = 0; i < 5; i++) {
+      System.out.println("\u001b[37m|||||||||||||||||||||||||||||||||");
+    }
+    for (int i = 0; i < 50; i++) {
+      for (int j = 0; j < colors.length - 1; j++) {
+        System.out.print("\u001b[" + colors[j % colors.length] + "m |||");
+      }
+      System.out.println();
+    }
+    System.out.print("\u001b[0m");
+  }
+  
   public static void main(String[] args){
+    /*
     System.out.print("\u001b[91m");
     System.out.println("Hello World");
     System.out.print("\u001b[0m");
@@ -11,5 +27,8 @@ public class ColorDemo {
       }
       System.out.println();
     }
+    */
+
+    rainbowCloud();
   }
 }
