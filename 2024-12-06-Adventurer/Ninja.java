@@ -1,33 +1,34 @@
 public class Ninja extends Adventurer {
-  private int special;
-  private int specialMax;
-  private String name;
-  private int HP,maxHP;
+  private int stealth;
+  private int maxStealth;
 
+  //constructors
   public Ninja(String name){
-    this(name, 10);
+    super(name, 10);
+    this.stealth = 10;
+    this.maxStealth = 10;
   }
 
   public Ninja(String name, int hp){
-      this.name = name;
-      this.HP = hp;
-      this.maxHP = hp;
+    super(name, hp);
+    this.stealth = 10;
+    this.maxStealth = 10;
   }
 
+  //accessor methods
   public String getSpecialName(){
     return "Stealth";
   }
 
   public int getSpecial(){
-    return this.special;
+    return this.stealth;
   }
 
   public void setSpecial(int n){
-    this.special = n;
+    this.stealth = n;
   }
 
   public int getSpecialMax(){
-    return this.specialMax;
+    return this.maxStealth;
   }
-
 }
