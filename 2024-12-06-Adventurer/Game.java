@@ -30,6 +30,27 @@ public class Game {
         System.out.println("Input was invalid. Please try again.");
         continue;
       }
+
+      if (p2.getHP() > 0) {
+        int randomMove = (int) (Math.random() * 3);
+        if (randomMove == 0) {
+          System.out.println(p2.attack(p1));
+        }
+        if (randomMove == 1) {
+          System.out.println(p2.specialAttack(p1));
+        }
+        if (randomMove == 2) {
+          System.out.println(p2.support());
+        }
+      }
+      if (p1.getHP() <= 0) {
+        System.out.println(p2 + " has won the game!");
+        continueGame = false;
+      }
+      if (p2.getHP() <= 0) {
+        System.out.println(p1 + " has won the game!");
+        continueGame = false;
+      }
     }
   }
 }
