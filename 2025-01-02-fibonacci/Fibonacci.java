@@ -9,16 +9,15 @@ public class Fibonacci{
   public static void makeWords(int remainingLetters, String result, String alphabet){
     if (remainingLetters == 0) {
       System.out.println(result);
+      return;
     }
     for (int i = 0; i < alphabet.length(); i++) {
-      String letter = alphabet.substring(i, i + 1);
-      remainingLetters -= 1;
-      result += letter;
+      makeWords(remainingLetters - 1, result + alphabet.charAt(i), alphabet);
     }
   }
 
   public static void main(String[] args) {
     //System.out.println(fib(46));
-    makeWords(2,"","abc");
+    makeWords(3,"","abc");
   }
 }
